@@ -124,12 +124,36 @@ body {
     border-radius: 12px;
     cursor: pointer;
     aspect-ratio: 4/3;
+    
+    /* Center the <a> tag inside the card */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05); /* Optional: helps see the card area */
+}
+
+.project-card a {
+    /* Ensure the link itself is centered and holds the image properly */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
 }
 
 .project-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    /* Now we set the size relative to the card */
+    width: 90%;  /* Adjust this to make the image smaller or larger */
+    height: auto; 
+    
+    /* 'contain' ensures it doesn't stretch and stays in the center */
+    object-fit: contain; 
+    
+    /* Remove any old positioning that might interfere */
+    position: static; 
+    margin: 0 auto;
+    
     transition: transform 0.5s;
 }
 

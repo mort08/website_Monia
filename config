@@ -1,0 +1,19 @@
+Host github.com
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/id_ed25519
+
+# mort08 account
+Host github-mort08
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_ed25519_mort08
+  IdentitiesOnly yes
+
+# marta-uoe account
+Host github-uoe
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_ed25519_uoe
+  IdentitiesOnly yes
+
