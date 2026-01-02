@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">Monika Górecka — Portfolio</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>Monika Górecka</h1>
+        <p>Artist, Graphic Designer, Translator</p>
+        <a href="#work" class="cta-button">View My Work</a>
+    </section>
+
+    <!-- Filter Buttons -->
+    <section class="portfolio" id="work">
+        <h2>My Work</h2>
+        
+        <div class="filter-container">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="prints">Prints</button>
+            <button class="filter-btn" data-filter="seehow">See How Project</button>
+            <button class="filter-btn" data-filter="drawings">Drawings</button>
+            <button class="filter-btn" data-filter="animation">Animation</button>
+        </div>
+
+        <!-- Portfolio Grid -->
+        <div class="grid">
+            <div class="project-card" data-category="prints">
+                <a href="projects/proj1.pdf" target="_blank">
+                    <img data-src="projects/proj1.jpg" alt="Project 1 Thumbnail">
+                    
+                    <div class="overlay">
+                        <h3>Prints</h3>
+                        <p>Prints • 2022 (Click to view PDF)</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="project-card" data-category="seehow">
+                <a href="projects/flowers.pdf" target="_blank">
+                    <img data-src="projects/flowers_page-0001.jpg" alt="Project 2 Thumbnail">
+                    
+                    <div class="overlay">
+                        <h3>See How</h3>
+                        <p>See How • 2022 (Click to view PDF)</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="project-card" data-category="drawings">
+                <a href="projects/targi_ksiazki.pdf" target="_blank">
+                    <img data-src="projects/drawings_page-0001.jpg" alt="Project 3">
+                    <div class="overlay">
+                        <h3>Drawings</h3>
+                        <p>Drawings • 2020</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="project-card" data-category="animation">
+                <a href="projects/animation.pdf" target="_blank">
+                    <img data-src="projects/animation_page-0001.jpg" alt="Project 4">
+                    <div class="overlay">
+                        <h3>Animation</h3>
+                        <p>Animation • 2020</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="portfolio" id="about">
+        <h2>About Me</h2>
+        <p>Grafik kreatywny z talentem do tworzenia unikalnych, niestandardowych grafik; Ilustrator;
+            Innowacyjne podejście do pomysłów i rozwoju koncepcji. Oferuję ponad 5-letnie doświadczenie w
+            nadzorowaniu indywidualnych projektów i rozwoju marki. Tłumacz i korepetytor języka angielskiego.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="portfolio" id="contact">
+        <h2>Get In Touch</h2>
+        <p>Let's work together!</p>
+    </section>
+
+    <!-- Link JavaScript file BEFORE closing body tag -->
+    <script src="script.js"></script>
+</body>
+</html>
