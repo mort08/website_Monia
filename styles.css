@@ -2,9 +2,12 @@
 :root {
     --primary-color: #000000;
     --secondary-color: #ffffff;
-    --accent-color: #6366f1;
-    --text-gray: #666666;
+    --accent-color: #8e8fee;
+    --text-grey: #666666;
     --background-color: #123456;
+    --pastelle-color1: #84c1fe;
+    --pastelle-color2: #faa7c8;
+    --pastelle-color3: #da9efb;
 }
 
 * {
@@ -14,7 +17,16 @@
 }
 
 body {
+    margin: 0;
+    padding: 0;
     font-family: 'Inter', 'Helvetica', 'sans-serif';
+
+    background-image: url('projects/animation_page-0002.jpg');
+    background-size: cover;          /* Ensures image covers the whole screen */
+    background-position: center;     /* Centers the image */
+    background-repeat: no-repeat;
+    background-attachment: fixed;    /* THIS IS THE KEY: it locks the image in place */
+
     line-height: 1.6;
     color: var(--primary-color);
 }
@@ -24,12 +36,14 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem 5%;
+    padding: 1.5rem 5%;
     position: fixed;
     width: 100%;
-    background: #ffffff;
-    backdrop-filter: blur(10px);
-    z-index: 1000;
+    /* 0.0 makes it invisible, 0.8 makes it semi-see-through */
+    background: rgba(255, 255, 255, 0.5); 
+    backdrop-filter: blur(4px);
+    z-index: 100;
+    transition: all 0.3s ease; /* Smooth transition for later */
 }
 
 .nav-links {
@@ -68,7 +82,7 @@ body {
 
 .hero p {
     font-size: 1.3rem;
-    color: var(--text-gray);
+    color: var(--text-grey);
     margin-bottom: 2rem;
 }
 
@@ -84,6 +98,7 @@ body {
 
 .cta-button:hover {
     transform: translateY(-3px);
+    color: white;
 }
 
 /* Portfolio Grid */
@@ -124,7 +139,7 @@ body {
     left: 0;
     right: 0;
     background: linear-gradient(transparent, rgba(0,0,0,0.8));
-    color: white;
+    color: rgb(255, 255, 255);
     padding: 2rem;
     transform: translateY(100%);
     transition: transform 0.3s;
@@ -157,7 +172,7 @@ body {
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    color: var(--text-gray);
+    color: var(--text-grey);
 }
 
 .filter-btn:hover {
@@ -180,5 +195,102 @@ body {
     
     .grid {
         grid-template-columns: 1fr;
+    }
+}
+
+/* Update your existing section classes */
+
+.hero {
+    background-color: #ffffff; 
+}
+
+.portfolio {
+    background-color: #f9f9f9; /* Subtle contrast from the hero*/ 
+}
+
+.timeline-container {
+    position: relative;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px 0;
+}
+
+/* The Vertical Line */
+.timeline-container::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background-color: var(--accent-color);
+    top: 0;
+    bottom: 0;
+    left: 20px; /* Aligns line to the left on mobile */
+    margin-left: -1px;
+}
+
+/* Individual Item Wrapper */
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    background: transparent;
+    margin-bottom: 30px;
+}
+
+/* The Dots on the line */
+.timeline-dot {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: white;
+    border: 3px solid var(--accent-color);
+    border-radius: 50%;
+    left: 12px;
+    top: 15px;
+    z-index: 1;
+}
+
+/* The Box containing the text */
+.timeline-content {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent */
+    backdrop-filter: blur(5px);           /* Glassmorphism */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    color: var(--primary-color);
+}
+
+.timeline-date {
+    font-weight: bold;
+    color: var(--accent-color);
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Desktop: Center the line and alternate sides */
+@media screen and (min-width: 768px) {
+    .timeline-container::after {
+        left: 50%;
+    }
+    
+    .timeline-item {
+        width: 50%;
+        padding: 20px 40px;
+    }
+
+    .timeline-item:nth-child(even) {
+        left: 50%;
+    }
+
+    .timeline-item:nth-child(odd) {
+        left: 0;
+        text-align: right;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-dot {
+        left: auto;
+        right: -8px;
+    }
+
+    .timeline-item:nth-child(even) .timeline-dot {
+        left: -8px;
     }
 }
