@@ -40,27 +40,34 @@
         <!-- Portfolio Grid -->
         <div class="grid">
             <div class="project-card" data-category="graphic">
-                <a href="projects/graph1.jpg" target="_blank">
+                <a href="projects/graph1.jpg" 
+                   class="project-link"
+                   data-title="Graphic Art Portfolio" 
+                   data-description="This project focuses on unique digital prints created in 2022. It involves high-contrast textures and innovative concept development.">
+                    
                     <img data-src="projects/graph1.jpg" alt="Project 1 Thumbnail">
                     
                     <div class="overlay">
                         <h3>Graphic</h3>
-                        <p>Prints • 2022 (Click to view PDF)</p>
+                        <p>Prints • 2022 (Click to view more details)</p>
                     </div>
                 </a>
             </div>
 
             <div class="project-card" data-category="graphic">
-                <a href="projects/graph2.jpg" target="_blank">
+                <a href="projects/graph2.jpg" 
+                   class="project-link"
+                   data-title="Graphic Art Portfolio" 
+                   data-description="This project focuses on unique digital prints created in 2022. It involves high-contrast textures and innovative concept development.">
+                    
                     <img data-src="projects/graph2.jpg" alt="Project 2 Thumbnail">
                     
                     <div class="overlay">
                         <h3>Graphic</h3>
-                        <p>Prints • 2022 (Click to view PDF)</p>
+                        <p>Prints • 2022</p>
                     </div>
                 </a>
             </div>
-
             <div class="project-card" data-category="graphic">
                 <a href="projects/graph3.jpg" target="_blank">
                     <img data-src="projects/graph3.jpg" alt="Project 2 Thumbnail">
@@ -162,6 +169,24 @@
     </section>
 
     <!-- Link JavaScript file BEFORE closing body tag -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <img id="modal-img" src="" alt="Project Image">
+                <div class="modal-text">
+                    <h2 id="modal-title" style="font-size: 1.6rem; margin-bottom: 10px;"></h2>
+                    <p id="modal-date" style="color: #666; margin-bottom: 10px;"></p>
+                    
+                    <div id="modal-description-container">
+                        <p id="modal-description" style="line-height: 1.2;"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="script.js"></script>
+
+    
 </body>
 </html>

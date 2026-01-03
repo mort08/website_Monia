@@ -31,6 +31,40 @@ filterButtons.forEach(button => {
     });
 });
 
+const modal = document.getElementById("projectModal");
+const closeModal = document.querySelector(".close-modal");
+
+document.querySelectorAll('.project-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault(); // This stops the browser from just opening the image file
+        
+        // 1. Grab the data from your HTML attributes
+        const imgPath = this.getAttribute('href');
+        const title = this.getAttribute('data-title');
+        const desc = this.getAttribute('data-description');
+
+        // 2. Fill the modal elements (Only the ones that still exist!)
+        if(document.getElementById('modal-img')) {
+            document.getElementById('modal-img').src = imgPath;
+        }
+        if(document.getElementById('modal-title')) {
+            document.getElementById('modal-title').innerText = title;
+        }
+        if(document.getElementById('modal-description')) {
+            document.getElementById('modal-description').innerText = desc;
+        }
+
+        // 3. Show the modal
+        modal.style.display = "block";
+    });
+});
+
+// Close logic
+closeModal.onclick = () => modal.style.display = "none";
+window.onclick = (event) => {
+    if (event.target == modal) modal.style.display = "none";
+};
+
 // Lazy Loading Images
 const images = document.querySelectorAll('img[data-src]');
 const imageObserver = new IntersectionObserver((entries, observer) => {

@@ -211,6 +211,103 @@ body {
     box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
 }
 
+/* Modal Background */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 2000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    backdrop-filter: blur(5px);
+}
+
+/* Modal Box */
+/* Update your existing Modal Box style */
+.modal-content {
+    background-color: white;
+    margin: 2% auto; 
+    /* REDUCE PADDING: This makes the inner "margins" smaller */
+    padding: 60px; /* Gives the "X" more empty space to sit in */
+    overflow: visible; /* Ensures the X doesn't get cut off */ 
+    
+    width: 90%;      /* Increased from 80% to use more screen width */
+    max-width: 1100px; 
+    min-height: 680px; /* Changed to auto so the box fits the content height */
+    
+    border-radius: 15px;
+    position: relative;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: row;
+    /* CHANGE THIS: aligns items to the top instead of the center */
+    align-items: flex-start; 
+    
+    justify-content: center;
+    gap: 40px; 
+    width: 100%;
+    /* Optional: add a little top margin if it feels too close to the modal edge */
+    margin-top: 20px; 
+}
+
+#modal-img {
+    flex: 0 0 55%;    /* Let the image take up a bit more space */
+    max-width: 600px; /* Increased max-width */
+    height: auto;
+    border-radius: 10px;
+    object-fit: contain;
+}
+
+.modal-text {
+    flex: 1;
+    /* This tiny adjustment ensures the first letter 
+       lines up exactly with the top of the image */
+    padding-top: 5px; 
+    padding-right: 40px;
+}
+
+#modal-description {
+    font-size: 1.1rem;
+    color: #333;
+    /* Keeps the text from stretching too wide on huge monitors */
+    max-width: 500px; 
+}
+
+.close-modal {
+    position: absolute;
+    /* Increase these values to move it further from the very edge */
+    top: 20px;       
+    right: 25px;     
+    
+    font-size: 35px;
+    color: #333;
+    cursor: pointer;
+    z-index: 1010; /* Ensures it stays above the image and text */
+    line-height: 1;
+    transition: color 0.3s;
+}
+
+.close-modal:hover {
+    color: var(--accent-color); /* Changes color when hovered */
+}
+
+/* Responsive: Stack them only on small mobile screens */
+@media (max-width: 768px) {
+    .modal-body {
+        flex-direction: column;
+        align-items: center;
+    }
+    .modal-content {
+        padding: 40px 20px;
+    }
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .hero h1 {
