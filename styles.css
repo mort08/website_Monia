@@ -5,7 +5,7 @@
     --accent-color: #8e8fee;
     --text-grey: #666666;
     --background-color: #123456;
-    --pastelle-color1: #84c1fe;
+    --pastelle-color1: #bedcfa;
     --pastelle-color2: #faa7c8;
     --pastelle-color3: #da9efb;
 }
@@ -257,11 +257,18 @@ body {
 }
 
 #modal-img {
-    flex: 0 0 55%;    /* Let the image take up a bit more space */
-    max-width: 600px; /* Increased max-width */
-    height: auto;
+    flex: 0 0 55%;    /* Keeps the side-by-side width you liked */
+    max-width: 500px; 
+    
+    /* NEW: Constrain the height to fit the modal's interior */
+    max-height: 70vh; /* Adjust this number to match your modal's look */
+    width: 100%;
+    
+    /* This is the magic part: 'contain' prevents the image from 
+       stretching and keeps the whole thing visible within the box */
+    object-fit: contain; 
+    
     border-radius: 10px;
-    object-fit: contain;
 }
 
 .modal-text {
@@ -273,17 +280,18 @@ body {
 }
 
 #modal-description {
-    font-size: 1.1rem;
-    color: #333;
-    /* Keeps the text from stretching too wide on huge monitors */
-    max-width: 500px; 
+    color: #757575;        /* A clean, professional grey */
+    line-height: 1.8;      /* Adds breathing room between lines */
+    font-size: 1rem;       /* Keeps it legible */
+    margin-top: 10px;      /* Adds a little space below the title */
+    font-weight: 400;      /* Ensures it isn't bold */
 }
 
 .close-modal {
     position: absolute;
     /* Increase these values to move it further from the very edge */
-    top: 20px;       
-    right: 25px;     
+    top: 10px;       
+    right: 20px;     
     
     font-size: 35px;
     color: #333;
