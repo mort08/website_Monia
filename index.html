@@ -34,7 +34,7 @@
             <button class="filter-btn" data-filter="artwork">Artwork</button>
             <button class="filter-btn" data-filter="projects">Projects</button>
             <button class="filter-btn" data-filter="animation">Animation</button>
-            <button class="filter-btn" data-filter="other">Free-Time Work</button>
+            <button class="filter-btn" data-filter="freelance">Freelance Work</button>
         </div>
 
         <!-- Portfolio Grid -->
@@ -48,36 +48,67 @@
                     <img data-src="projects/graph2.jpg" alt="Project 1 Thumbnail">
                     
                     <div class="overlay">
-                        <h3>Diptych, Day</h3>
-                        <p>Prints • 2022 (Click to view more details)</p>
+                        <h3>Diptych</h3>
+                        <p>Artwork • 2022 (Click to view more details)</p>
                     </div>
                 </a>
             </div>
 
             <div class="project-card" data-category="artwork">
-                <a href="projects/graph3.jpg" target="_blank">
+                <a href="projects/process.jpg" target="_blank"
+                    class="project-link"
+                    data-title="Process" 
+                    data-description="CHANGE DESCRIPTION.">
+                    
+
                     <img data-src="projects/graph3.jpg" alt="Project 2 Thumbnail">
                     
                     <div class="overlay">
-                        <h3>Graphic</h3>
-                        <p>Prints • 2022 (Click to view PDF)</p>
+                        <h3>Process</h3>
+                        <p>Artwork • 2022 (Click to view PDF)</p>
                     </div>
                 </a>
             </div>
 
-            <div class="project-card" data-category="seehow">
-                <a href="projects/flowers.pdf" target="_blank">
-                    <img data-src="projects/flowers_page-0001.jpg" alt="Project 2 Thumbnail">
+            <div class="project-card" data-category="projects">
+                <a href="projects/seehow_merged.jpg" target="_blank"
+                    class="project-link"
+                    data-title="See How" 
+                    
+                    data-description="CHANGE DESCRIPTION.
+                    https://www.seehow.co.uk/">
+                    
+                    <img data-src="projects/5.jpg" alt="Project 2 Thumbnail">
                     
                     <div class="overlay">
                         <h3>See How</h3>
-                        <p>See How • 2022 (Click to view PDF)</p>
+                        <p>See How • 2020—2022 (Click to view more details)</p>
                     </div>
                 </a>
             </div>
 
-            <div class="project-card" data-category="drawings">
-                <a href="projects/targi_ksiazki.pdf" target="_blank">
+            <div class="project-card" data-category="projects">
+                <a href="projects/targi_merged.jpg" target="_blank"
+                    class="project-link"
+                    data-title="Targi Ksiazki" 
+                    
+                    data-description="CHANGE DESCRIPTION.">
+                    
+                    <img data-src="projects/targi_ksiazki_page-0001.jpg" alt="Project 2 Thumbnail">
+                    
+                    <div class="overlay">
+                        <h3>Targi Ksiazki</h3>
+                        <p>Targi Ksiazki • 2018—2020 (Click to view more details)</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="project-card" data-category="freelance">
+                <a href="projects/targi_ksiazki.pdf" target="_blank"
+                    class="project-link"
+                    data-title="Process" 
+                    data-description="A diptych that pushed me to work on illustrating my imagination related to South Korea. It shows how imagined South Korean metropolises during the day and at night. I decided to print them on transparent foil, which would give the possibility of backlighting to emphasize the strong colors and the thicket of elements of the urban landscape.">
+                    
                     <img data-src="projects/drawings_page-0001.jpg" alt="Project 3">
                     <div class="overlay">
                         <h3>Drawings</h3>
@@ -87,7 +118,12 @@
             </div>
 
             <div class="project-card" data-category="animation">
-                <a href="projects/animation.pdf" target="_blank">
+                <a href="projects/animation.pdf" target="_blank"
+                    class="project-link"
+                    data-title="Process" 
+                    data-description="A diptych that pushed me to work on illustrating my imagination related to South Korea. It shows how imagined South Korean metropolises during the day and at night. I decided to print them on transparent foil, which would give the possibility of backlighting to emphasize the strong colors and the thicket of elements of the urban landscape.">
+                    
+
                     <img data-src="projects/animation_page-0001.jpg" alt="Project 4">
                     <div class="overlay">
                         <h3>Animation</h3>
@@ -96,12 +132,16 @@
                 </a>
             </div>
 
-            <div class="project-card" data-category="other">
-                <a href="projects/BTS2.jpg" target="_blank">
+            <div class="project-card" data-category="freelance">
+                <a href="projects/BTS_merged.jpg" target="_blank"
+                    class="project-link"
+                    data-title="BTS drawings" 
+                    data-description="CHANGE DESCRIPTION.">
+                    
                     <img data-src="projects/BTS1.jpg" alt="Project 5">
                     <div class="overlay">
-                        <h3>Other</h3>
-                        <p>Other • 2017—Present</p>
+                        <h3>Social Media Engagement</h3>
+                        <p>BTS • 2020—Present</p>
                     </div>
                 </a>
             </div>
@@ -159,13 +199,15 @@
         <div class="modal-content">
             <span class="close-modal">&times;</span>
             <div class="modal-body">
-                <img id="modal-img" src="" alt="Project Image">
+                <div class="modal-image-scroll">
+                    <img id="modal-img" src="" alt="Project Image">
+                </div>
+            
                 <div class="modal-text">
-                    <h2 id="modal-title" style="font-size: 1.6rem; margin-bottom: 10px;"></h2>
+                    <h2 id="modal-title" style="font-size: 1.8rem; margin-bottom: 10px;"></h2>
                     <p id="modal-date" style="color: #666; margin-bottom: 10px;"></p>
-                    
                     <div id="modal-description-container">
-                        <p id="modal-description" style="line-height: 1.2;"></p>
+                        <p id="modal-description" style="line-height: 1.6; color: #757575;"></p>
                     </div>
                 </div>
             </div>

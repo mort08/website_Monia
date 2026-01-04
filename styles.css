@@ -54,8 +54,8 @@ body {
 
 .nav-links a {
     text-decoration: none;
-    color: var(--primary-color);
-    font-weight: 500;
+    color: var(--text-grey);
+    font-weight: 800;
     transition: color 0.3s;
 }
 
@@ -163,7 +163,7 @@ body {
     left: 0;
     right: 0;
     background: linear-gradient(transparent, rgba(0,0,0,0.8));
-    color: rgb(255, 255, 255);
+    color: white;
     padding: 2rem;
     transform: translateY(100%);
     transition: transform 0.3s;
@@ -246,41 +246,37 @@ body {
 .modal-body {
     display: flex;
     flex-direction: row;
-    /* CHANGE THIS: aligns items to the top instead of the center */
-    align-items: flex-start; 
-    
-    justify-content: center;
-    gap: 40px; 
+    align-items: flex-start;
+    gap: 40px;
     width: 100%;
-    /* Optional: add a little top margin if it feels too close to the modal edge */
-    margin-top: 20px; 
+    /* Limits the height of the entire content area */
+    max-height: 70vh; 
+}
+
+/* NEW: The scrollable container for the image */
+.modal-image-scroll {
+    flex: 0 0 55%; /* Image takes 60% of the width */
+    max-height: 70vh; /* Matches the modal body height */
+    overflow-y: auto; /* Enables vertical scrolling */
+    padding-right: 10px; /* Space for the scrollbar */
+    border-radius: 10px;
 }
 
 #modal-img {
-    flex: 0 0 55%;    /* Keeps the side-by-side width you liked */
-    max-width: 500px; 
-    
-    /* NEW: Constrain the height to fit the modal's interior */
-    max-height: 70vh; /* Adjust this number to match your modal's look */
-    width: 100%;
-    
-    /* This is the magic part: 'contain' prevents the image from 
-       stretching and keeps the whole thing visible within the box */
-    object-fit: contain; 
-    
-    border-radius: 10px;
+    width: 100%; /* Image takes full width of the scroll container */
+    height: auto; /* Height grows naturally based on the image file */
+    display: block;
+    border-radius: 5px;
 }
 
 .modal-text {
     flex: 1;
-    /* This tiny adjustment ensures the first letter 
-       lines up exactly with the top of the image */
-    padding-top: 5px; 
-    padding-right: 40px;
+    position: sticky; /* Ensures text stays at the top while you scroll the image */
+    top: 0;
 }
 
 #modal-description {
-    color: #757575;        /* A clean, professional grey */
+    color: var(--text-grey);        /* A clean, professional grey */
     line-height: 1.8;      /* Adds breathing room between lines */
     font-size: 1rem;       /* Keeps it legible */
     margin-top: 10px;      /* Adds a little space below the title */
@@ -330,7 +326,7 @@ body {
 /* Update your existing section classes */
 
 .hero {
-    background-color: #ffffff; 
+    background-color: #f9f9f9; 
 }
 
 .portfolio {
