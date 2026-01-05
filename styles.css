@@ -31,6 +31,14 @@ body {
     color: var(--primary-color);
 }
 
+.logo {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    font-weight: 800;
+    font-style:initial;
+    font-family:'Courier New', Courier, monospace;
+}
+
 /* Navigation */
 .navbar {
     display: flex;
@@ -55,12 +63,27 @@ body {
 .nav-links a {
     text-decoration: none;
     color: var(--text-grey);
-    font-weight: 800;
+    font-weight: 600;
     transition: color 0.3s;
 }
 
 .nav-links a:hover {
     color: var(--accent-color);
+}
+
+.nav-links i {
+    font-size: 1.2rem; /* Makes the icons a bit larger */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links a:hover i {
+    color: #E1306C; /* Instagram's brand color on hover */
+    transform: translateY(-2px); /* Subtle lift effect */
+}
+
+/* Optional: Add specific colors for different brands */
+.fa-linkedin:hover {
+    color: #0077b5 !important;
 }
 
 /* Hero Section */
