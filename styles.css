@@ -31,12 +31,18 @@ body {
     color: var(--primary-color);
 }
 
+/* LOGO */
 .logo {
-    font-size: 1.5rem;
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.7rem;
     color: var(--accent-color);
-    font-weight: 800;
-    font-style:initial;
-    font-family:'Courier New', Courier, monospace;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--text-grey);
+    font-weight: 400;
 }
 
 /* Navigation */
@@ -109,9 +115,11 @@ body {
     margin-bottom: 2rem;
 }
 
+/* CTA BUTTON */
 .cta-button {
     padding: 1rem 2.5rem;
-    background: var(--accent-color);
+    /* background: var(--accent-color); */
+    background: linear-gradient(135deg, var(--pastelle-color1), var(--pastelle-color3));
     color: white;
     text-decoration: none;
     border-radius: 50px;
@@ -120,7 +128,8 @@ body {
 }
 
 .cta-button:hover {
-    transform: translateY(-3px);
+    transform: scale(1.09);
+    box-shadow: 0 12px 30px rgba(142, 143, 238, 0.35);
     color: white;
 }
 
@@ -200,7 +209,9 @@ body {
     transform: translateY(0);
 }
 
-/* --- Add this for Filter Buttons --- */
+
+
+/* --- Filter Buttons --- */
 
 .filter-container {
     display: flex;
@@ -246,7 +257,6 @@ body {
 }
 
 /* Modal Box */
-/* Update your existing Modal Box style */
 .modal-content {
     background-color: white;
     margin: 2% auto; 
@@ -276,7 +286,7 @@ body {
     max-height: 70vh; 
 }
 
-/* NEW: The scrollable container for the image */
+/* The scrollable container for the image */
 .modal-image-scroll {
     flex: 0 0 55%; /* Image takes 60% of the width */
     max-height: 70vh; /* Matches the modal body height */
@@ -347,7 +357,6 @@ body {
 }
 
 /* Update your existing section classes */
-
 .hero {
     background-color: #f9f9f9; 
 }
@@ -441,4 +450,125 @@ body {
     .timeline-item:nth-child(even) .timeline-dot {
         left: -8px;
     }
+}
+
+/* CONTACT SECTION */
+.contact-section {
+    text-align: center;
+    padding: 5rem 5%;
+}
+
+.contact-subtitle {
+    color: var(--text-grey);
+    margin-bottom: 3rem;
+}
+
+/* Wrapper */
+.contact-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+/* Glass Card */
+.contact-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 30px 40px;
+    border-radius: 16px;
+
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    transition: all 0.35s ease;
+    min-width: 280px;
+}
+
+/* Hover effect consistent with your style */
+.contact-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    border-color: var(--accent-color);
+}
+
+/* Icon */
+.contact-icon {
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1.6rem;
+
+    color: var(--accent-color);
+    background: rgba(142, 143, 238, 0.1);
+
+    border-radius: 50%;
+    flex-shrink: 0; /* Prevents stretching in flex layout */
+
+    transition: all 0.3s ease;
+}
+
+.contact-card:hover .contact-icon {
+    background: var(--accent-color);
+    color: white;
+}
+
+/* Text */
+.contact-card h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.contact-card a {
+    text-decoration: none;
+    color: var(--text-grey);
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.contact-card a:hover {
+    color: var(--accent-color);
+}
+
+/* ABOUT SECTION */
+
+.about-container {
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+}
+
+.about-intro {
+    padding: 35px;
+
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(8px);
+
+    border-radius: 16px;
+
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+.about-intro h3 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    color: var(--accent-color);
+}
+
+.about-intro p {
+    margin-bottom: 15px;
+    color: var(--text-grey);
+    line-height: 1.8;
+}
+
+.about-highlight {
+    margin-top: 10px;
+    font-weight: 600;
+    color: var(--primary-color);
 }
