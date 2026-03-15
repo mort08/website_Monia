@@ -34,7 +34,7 @@ body {
 /* LOGO */
 .logo {
     font-family: 'DM Serif Display', serif;
-    font-size: 1.7rem;
+    font-size: 2rem;
     color: var(--accent-color);
     font-weight: 400;
     letter-spacing: 1px;
@@ -581,6 +581,8 @@ img {
 /* --- FINAL MOBILE FIXES --- */
 @media (max-width: 768px) {
     /* 1. Make the Navbar usable */
+
+    
     .navbar {
         flex-direction: column; /* Stacks logo above links */
         padding: 10px;
