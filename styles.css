@@ -209,6 +209,10 @@ body {
     transform: translateY(0);
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
 
 
 /* --- Filter Buttons --- */
@@ -572,3 +576,34 @@ body {
     font-weight: 600;
     color: var(--primary-color);
 }
+
+
+/* Mobile Styles (Screens smaller than 768px) */
+@media (max-width: 768px) {
+    
+    /* 1. Stack the navigation links vertically */
+    .nav-links {
+        display: none; /* Usually, we hide these and show a 'hamburger' menu on mobile */
+    }
+
+    /* 2. Make columns stack on top of each other */
+    .project-grid, .contact-container {
+        grid-template-columns: 1fr; /* Change from 2 or 3 columns to just 1 */
+        padding: 10px;
+    }
+
+    /* 3. Shrink large text */
+    h1 {
+        font-size: 2rem;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    /* 4. Fix background images */
+    body {
+        background-attachment: scroll; /* Fixed backgrounds can be glitchy on mobile */
+    }
+}
+
