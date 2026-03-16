@@ -34,7 +34,7 @@ body {
 /* LOGO */
 .logo {
     font-family: 'DM Serif Display', serif;
-    font-size: 2.2rem;
+    font-size: 2rem;
     color: var(--accent-color);
     font-weight: 400;
     letter-spacing: 1px;
@@ -582,6 +582,18 @@ img {
 @media (max-width: 768px) {
     /* 1. Make the Navbar usable */
 
+    .logo {
+        /* Reduce the font size slightly for mobile */
+        font-size: 1.15rem !important; 
+        
+        /* Ensure the text doesn't wrap to a new line */
+        white-space: nowrap; 
+        
+        /* Centers the logo if the navbar is in column mode */
+        text-align: center;
+        width: 100%;
+        display: block;
+    }
     
     .navbar {
         flex-direction: column; /* Stacks logo above links */
@@ -602,6 +614,8 @@ img {
         font-size: 0.9rem; /* Smaller text to fit all links */
     }
 
+    
+
     /* 2. Fix the Hero section spacing */
     .hero {
         height: auto;
@@ -609,7 +623,7 @@ img {
     }
 
     .hero h1 {
-        font-size: 2.2rem;
+        font-size: 1.8rem;
     }
 
     /* 3. FIX THE CARDS: Force them to be 1 column and full width */
