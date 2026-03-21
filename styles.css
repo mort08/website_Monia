@@ -523,6 +523,29 @@ img {
     color: white;
 }
 
+/* PROFILE PHOTO */
+.about-photo-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.about-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top; /* Shows face, not chest */
+    border: 3px solid var(--accent-color);
+    box-shadow: 0 8px 30px rgba(142, 143, 238, 0.35);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-photo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 40px rgba(142, 143, 238, 0.5);
+}
+
 /* Text */
 .contact-card h3 {
     margin: 0;
